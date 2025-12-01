@@ -18,7 +18,10 @@ const app = express();
 const PORT = 3000;
 
 // Configurarea middleware-ului de bază
-app.use(cors()); // Permite cereri cross-origin de la frontend
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json()); // Parser pentru JSON în request body
 
 // Căile către fișierele de date
