@@ -20,7 +20,7 @@ const PORT = 3000;
 // Configurarea middleware-ului de bază
 // Configurează CORS pentru producție
 app.use(cors({
-  origin: 'https://mern-bookstore-frontend-pi.vercel.app',
+  origin: '*', // 👈 PERMITE TOATE ORIGIN-URILE
   credentials: true
 }));
 app.use(express.json()); // Parser pentru JSON în request body
