@@ -19,10 +19,9 @@ const PORT = 3000;
 
 // Configurarea middleware-ului de bază
 // Configurează CORS pentru producție
-const allowedOrigins = ['http://localhost:5173', 'https://mern-bookstore-frontend-pi.vercel.app'];
 app.use(cors({
-  origin: (origin, callback) => allowedOrigins.includes(origin) ? callback(null, true) : callback(new Error('CORS')),
-  credentials: true
+origin: '*', // PERMITE TOATE ORIGIN-URILE
+credentials: true
 }));
 app.use(express.json()); // Parser pentru JSON în request body
 
